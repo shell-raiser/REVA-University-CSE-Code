@@ -2,29 +2,25 @@
 #include <stdlib.h>
 #include <unistd.h>
 int main(){
-  int pid, pid1, pid2;
-  pid = fork();
-  if (pid == 0 ){
-  sleep(3);
-  //printf("Child[1]-->pid=%d and ppid=%d\n",getpid(),getppid());
+  int pid = fork();
+  if (pid > 0 ){
+    printf("Parent Process\n");
+    printf("ID %d\n\n",getpid());
   }
-  else{
-    pid1 = fork();
-    if(pid1==0){
-      sleep(2);
-      printf("Child[2]-->pid=%d and ppid =%d\n",getpid(),getppid());
+  else if (pid == 0) {
+      printf("Child Process\n");
+      printf("ID: %d\n",getpid());
+      printf("Parent ID: %d\n\n",getppid());
+      sleep(10);
+      printf("ID Child Process\n");
+      printf("ID %d\n", getpid());
+      printf("Parent ID %d\n", getpid());
     }
     else{
-      pid2=fork();
-      if(pid2==0){
-        //printf("Child[3]-->pid=%d and ppid = %d\n", getpid(),getppid());
+      printf("Failed to create child Processc");
       }
-      else{
-        //printf("Parent-->pid=%d\n",getppid());
-      }
-
-    }
-  }
 return 0;
 
 }
+
+//Write a C program to show the process is an orphan process and print its parent PID value
