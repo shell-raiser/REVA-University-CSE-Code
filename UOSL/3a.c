@@ -22,7 +22,7 @@ int main(){
 		exit(0);
 	}
 	sleep(2);
-	system("ps -o ppid, state, command");
+	system("ps -o pid,ppid,state,tty,command");
 	exit(0);
 }
 
