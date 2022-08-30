@@ -1,6 +1,12 @@
+#checkoutLocation: src/github.com/32leaves/hello-ui
+# workspaceLocation: /
 image:
   file: .gitpod.Dockerfile
+ports:
+  - port: 6080
+    protocol: "http"
 
 tasks:
   - init: "pip install conan"
-  - command: "conan install . && cmake ."
+  #- command: "conan install . && cmake ."
+  #- command: "go get -v ./... && go run main.go"
