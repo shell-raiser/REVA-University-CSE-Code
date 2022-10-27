@@ -4,7 +4,7 @@ image:
   file: .gitpod.Dockerfile
 ports:
   - port: 6080
-    protocol: "http"
+    # protocol: "http"
 
 tasks:
   - init: "pip install conan"
