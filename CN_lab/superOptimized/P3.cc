@@ -22,34 +22,24 @@
 
 using namespace ns3;
 
-// //NS_LOG_COMPONENT_DEFINE ("SecondScriptExample");
 
 int 
 main ()
 {
-  bool verbose = true;
-  uint32_t nCsma = 3;
 
-  // //CommandLine //cmd;
-  // //cmd.AddValue ("nCsma", "Number of \"extra\" CSMA nodes/devices", nCsma);
-  // //cmd.AddValue ("verbose", "Tell echo applications to log if true", verbose);
 
-  // //cmd.Parse (argc,argv);
 
-  if (verbose)
-    {
+
       LogComponentEnable ("UdpEchoClientApplication", LOG_LEVEL_INFO);
       LogComponentEnable ("UdpEchoServerApplication", LOG_LEVEL_INFO);
-    }
 
-  nCsma = nCsma == 0 ? 1 : nCsma;
 
   NodeContainer p2pNodes;
   p2pNodes.Create (2);
 
   NodeContainer csmaNodes;
   csmaNodes.Add (p2pNodes.Get (1));
-  csmaNodes.Create (nCsma);
+  csmaNodes.Create (3);
 
   PointToPointHelper pointToPoint;
   pointToPoint.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
@@ -80,11 +70,11 @@ main ()
 
   UdpEchoServerHelper echoServer (9);
 
-  ApplicationContainer serverApps = echoServer.Install (csmaNodes.Get (nCsma));
+  ApplicationContainer serverApps = echoServer.Install (csmaNodes.Get (3));
   serverApps.Start (Seconds (1.0));
   serverApps.Stop (Seconds (10.0));
 
-  UdpEchoClientHelper echoClient (csmaInterfaces.GetAddress (nCsma), 9);
+  UdpEchoClientHelper echoClient (csmaInterfaces.GetAddress (3), 9);
   echoClient.SetAttribute ("MaxPackets", UintegerValue (3));
   echoClient.SetAttribute ("Interval", TimeValue (Seconds (1.0)));
   echoClient.SetAttribute ("PacketSize", UintegerValue (1024));

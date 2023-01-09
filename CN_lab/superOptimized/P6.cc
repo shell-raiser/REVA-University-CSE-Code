@@ -19,19 +19,14 @@
 
 using namespace ns3;
 
-//NS_LOG_COMPONENT_DEFINE ("FirstScriptExample");
 
 int
 main ()
 {
  
 //step2: declare the variable tracing
-bool tracing = false;
 
- //CommandLine //cmd;
-  //cmd.Parse (argc, argv);
   
-  //Time::SetResolution (Time::NS);
   LogComponentEnable ("UdpEchoClientApplication", LOG_LEVEL_INFO);
   LogComponentEnable ("UdpEchoServerApplication", LOG_LEVEL_INFO);
 
@@ -78,15 +73,6 @@ FlowMonitorHelper flowHelper;
 flowMonitor = flowHelper.InstallAll();
 
 Simulator::Stop(Seconds(10.0));
-
- if (tracing==true)
-    {
-       
-pointToPoint.EnablePcapAll ("p2p");
-
-}
-
-
   Simulator::Run ();
 
 //step 4: add the following statement for xml file

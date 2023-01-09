@@ -12,15 +12,11 @@
 
 using namespace ns3;
 
-////NS_LOG_COMPONENT_DEFINE ("FirstScriptExample");
 
 int
 main ()
 {
-  ////CommandLine //cmd;
-  ////cmd.Parse (argc, argv);
-  
-  //Time::SetResolution (Time::NS);
+
   LogComponentEnable ("UdpEchoClientApplication", LOG_LEVEL_INFO);
   LogComponentEnable ("UdpEchoServerApplication", LOG_LEVEL_INFO);
 
@@ -31,7 +27,7 @@ main ()
   pointToPoint.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
   pointToPoint.SetChannelAttribute ("Delay", StringValue ("2ms"));
 
-  NetDeviceContainer devices;+
+  NetDeviceContainer devices;
   devices = pointToPoint.Install (nodes);
 
   InternetStackHelper stack;
