@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity">
+ <ScrollView
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:background="#A88C83"
+ android:scrollbars="vertical">
+ <LinearLayout
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:layout_margin="20dp"
+ android:background="#4B3E3838"
+ android:orientation="vertical">
+ <Button
+ android:id="@+id/cse"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center"
+ android:layout_marginTop="100dp"
+ android:layout_marginBottom="100dp"
+ android:backgroundTint="#FF5722"
+ android:textStyle="bold"
+ android:text="School of CSE"
+ android:textColor="#fff"
+ android:textSize="25sp" />
+ <Button
+ android:id="@+id/ece"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center"
+ android:layout_marginTop="100dp"
+ android:layout_marginBottom="100dp"
+ android:textStyle="bold"
+ android:backgroundTint="#FF5722"
+ android:text="SChool of ECE"
+ android:textColor="#fff"
+ android:textSize="25sp" />
+ <Button
+ android:id="@+id/eee"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center"
+ android:layout_marginTop="100dp"
+ android:layout_marginBottom="100dp"
+ android:backgroundTint="#FF5722"
+ android:text="School of EEE "
+ android:textColor="#fff"
+ android:textStyle="bold"
+ android:textSize="25sp" />
+ <Button
+ android:id="@+id/mech"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center"
+ android:layout_marginTop="100dp"
+ android:layout_marginBottom="100dp"
+ android:backgroundTint="#FF5722"
+ android:text="School of Mechanical"
+ android:textColor="#fff"
+ android:textStyle="bold"
+ android:textSize="25sp" />
+ <Button
+ android:id="@+id/cnit"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center"
+ android:layout_marginTop="100dp"
+ android:layout_marginBottom="100dp"
+ android:backgroundTint="#FF5722"
+ android:text="School of CNIT"
+ android:textStyle="bold"
+ android:textColor="#fff"
+ android:textSize="25sp" />
+ </LinearLayout>
+ </ScrollView>
+</RelativeLayout>

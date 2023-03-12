@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:background="#8BC34A"
+ android:backgroundTint="#8BC34A"
+ android:contextClickable="true">
+ <TextView
+ android:id="@+id/txtVw"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_marginLeft="50dp"
+ android:layout_marginTop="150dp"
+ android:background="#3F51B5"
+ android:text="Select Branch:"
+ android:textColor="#FFEB3B"
+ android:textSize="20sp"
+ android:textStyle="bold" />
+ <Spinner
+ android:id="@+id/spinner1"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_alignBottom="@+id/txtVw"
+ android:layout_toRightOf="@+id/txtVw" />
+</RelativeLayout>
